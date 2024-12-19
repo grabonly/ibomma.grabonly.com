@@ -43,29 +43,29 @@ resp1.results.map(movie =>{
         </item>`;
 });
 
-resp2.results.map(movie =>{
-    rssFeed += `
+// resp2.results.map(movie =>{
+//     rssFeed += `
     
-        <item>
-            <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
-            <pubDate>${rssFeedTime(false)}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
-        </item>`;
-});
+//         <item>
+//             <title>${movie.title} full movie review</title>
+//             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+//             <description>${movie.overview}</description>
+//             <pubDate>${rssFeedTime(false)}</pubDate>
+//             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+//         </item>`;
+// });
 
-resp3.results.map(movie =>{
-    rssFeed += `
+// resp3.results.map(movie =>{
+//     rssFeed += `
     
-        <item>
-            <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
-            <pubDate>${rssFeedTime(false)}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
-        </item>`;
-});
+//         <item>
+//             <title>${movie.title} full movie review</title>
+//             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+//             <description>${movie.overview}</description>
+//             <pubDate>${rssFeedTime(false)}</pubDate>
+//             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+//         </item>`;
+// });
 
     rssFeed += `
 
