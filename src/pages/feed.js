@@ -32,15 +32,15 @@ export const GET = ({request}) =>{
         <sy:updateFrequency>1</sy:updateFrequency>`;
 
 // resp1.results.map(movie =>{
-    rssFeed += `
+    // rssFeed += `
     
-        <item>
-            <title>${"resp1.results[0].movie.title"} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title")+"_"+"resp1.results[0].movie.id"+"/"}</link>
-            <description>${movie.overview}</description>
-            <pubDate>${"rssUpdateTime"}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title)"+"_"+"resp1.results[0].movie.id"+"/"}</guid>
-        </item>`;
+    //     <item>
+    //         <title>${"resp1.results[0].movie.title"} full movie review</title>
+    //         <link>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title")+"_"+"resp1.results[0].movie.id"+"/"}</link>
+    //         <description>${movie.overview}</description>
+    //         <pubDate>${"rssUpdateTime"}</pubDate>
+    //         <guid>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title)"+"_"+"resp1.results[0].movie.id"+"/"}</guid>
+    //     </item>`;
 // });
 
 
