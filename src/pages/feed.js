@@ -16,10 +16,10 @@ export const GET = ({request}) =>{
       xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
       xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
     
-      <channel>
-    
+    <channel>
+
           <title>${title}</title>
-          <atom:link href=${rootDomain}+"/feed/" rel="self" type="application/rss+xml" />
+          <atom:link href="${rootDomain+"/feed/"}" rel="self" type="application/rss+xml" />
           <link>${rootDomain}</link>
           <description>${title} ac ${year} - New Telugu, Tamil, Hindi &amp; English Movies HD Quality</description>
           <lastBuildDate>Wed, 18 Dec 2024 17:45:43 +0000</lastBuildDate>
@@ -28,15 +28,18 @@ export const GET = ({request}) =>{
           <sy:updateFrequency>1</sy:updateFrequency>`;
 
      rssFeed += `
+
         <item>
-        <title>How to Learn JavaScript in 30 Days</title>
-        <link>https://myawesomeblog.com/learn-javascript</link>
-        <description>A comprehensive guide to mastering JavaScript quickly.</description>
-        <pubDate>Sun, 17 Dec 2024 09:00:00 +0000</pubDate>
-        <guid>https://myawesomeblog.com/learn-javascript</guid>
+            <title>How to Learn JavaScript in 30 Days</title>
+            <link>https://myawesomeblog.com/learn-javascript</link>
+            <description>A comprehensive guide to mastering JavaScript quickly.</description>
+            <pubDate>Sun, 17 Dec 2024 09:00:00 +0000</pubDate>
+            <guid>https://myawesomeblog.com/learn-javascript</guid>
         </item>`;
 
-    rssFeed += `</channel></rss>`
+    rssFeed += `
+    </channel>
+</rss>`
 
     return new Response(rssFeed, {
         headers: {
