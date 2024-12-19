@@ -1,18 +1,23 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-
 import {title} from "../API/defaultSiteValues"
 import Footer from "../components/Footer.astro";
 import ContentLayout from "../layouts/ContentLayout.astro";
+import CardWrapper from "../components/CardWrapper.astro";
+import { moviesList } from "../API/latestMovies";
+
+const movies = await moviesList();
 ---
 
 <Layout title="404 - Not Found" desc=" ">
     <Header title={title}/>
     <ContentLayout>
-        <div class="w-100 bg-white py-5">
-            <p class="fs-1 fw-bold text-center">404 Not Found</p>
-        </div>
+        <div class="bg-white text-dark text-center py-3 mb-2 fw-semibold">404 - Your request was not found!</div>
+        <h2 class="bg-dark text-white p-2 rounded-1">Latest Movies</h2>
+        {
+            movies.map(movie=><CardWrapper resp={movie.results}/>)
+        }
     </ContentLayout>
     <Footer title={title}/>
 </Layout>

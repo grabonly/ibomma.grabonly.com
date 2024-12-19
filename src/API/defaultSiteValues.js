@@ -1,3 +1,3 @@
 /* Site Settings */
-export const title = "Tamilrockers";
-export const desc = `${title} 2024 - Get the Latest Telugu, Tamil, Hindi and English Movies at High Quality.`;
+export const title = "1TamilMV";
+export const desc = `${title} ac 2024: Find the latest Telugu, Tamil, Hindi movies and English movies at HD Quality.`;

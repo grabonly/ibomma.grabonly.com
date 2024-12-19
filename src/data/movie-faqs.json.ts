@@ -11,8 +11,8 @@ type movieProps = {
 
 export const movieFAQs = (movie: movieProps): Array<QA> =>  [
         {
-            question: `Who directed ${movie.title}?`,
-            answer: `The movie was directed by ${movie.director}.`,
+            question: `Who is the director of the ${movie.title}?`,
+            answer: `${movie.director} directed the movie.`,
         },
         {
             question: `What genres does ${movie.title} belong to?`,

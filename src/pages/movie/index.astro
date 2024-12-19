@@ -8,11 +8,11 @@ import {moviesList} from '../../API/latestMovies'
 import {title} from '../../API/defaultSiteValues';
 import {YYYY} from '../../API/time'
 const year = YYYY();
-const desc = "Find the latest movie's reviews all over the world, read review, watch trailer and more."
+const desc = `Get the latest movie reviews ${year}, Telugu, Hindi, Tamil, English Movie Reviews at one place.`;
 const movies = await moviesList();
 ---
 
-<Layout title={"Latest Movies "+year} desc={desc} index={true}>
+<Layout title={"Latest Movies in "+year} desc={desc} index={true}>
     <Header title={title}/>
     <ContentLayout>
         <h2 class="bg-dark text-white p-2 rounded-1">Latest Movies</h2>

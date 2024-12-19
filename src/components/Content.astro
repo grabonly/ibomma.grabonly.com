@@ -7,10 +7,10 @@ const [resp1, resp2, resp3] = await loadMovies(1)
 ---
 
 <ContentLayout>
-    <h2 class="bg-white px-2 py-2 rounded-1">Popular Indian Movies</h2>
+    <h2 class="bg-dark text-white px-2 py-2 rounded-1">Popular Movies Collection</h2>
     <CardWrapper resp={resp1.results}/>
-    <h2 class="bg-white px-2 py-2 my-2 rounded-1">Popular Hollywood Movies</h2>
+    <h2 class="bg-dark text-white px-2 py-2 my-2 rounded-1">Popular Hollywood Movies</h2>
     <CardWrapper resp={resp2.results}/>
-    <h2 class="bg-white px-2 py-2 my-2 rounded-1">Popular Korean Movies</h2>
+    <h2 class="bg-dark text-white px-2 py-2 my-2 rounded-1">Popular Korean Movies</h2>
     <CardWrapper resp={resp3.results}/>
 </ContentLayout>

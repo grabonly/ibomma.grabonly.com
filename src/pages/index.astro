@@ -4,9 +4,11 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import {title, desc} from "../API/defaultSiteValues.js"
+import { YYYY, metaUpdatedTime } from "../API/time";
+const year = YYYY();
 ---
 
-<Layout title={title+" 2024 - New Telugu, Tamil, Hindi, English Movies"} desc={desc} index={true}>
+<Layout title={title+" ac "+year+" - New Telugu, Tamil, Hindi & English Movies HD Quality"} desc={desc} index={true}>
     <Header title={title} />
     <Content/>
     <Footer title={title} />
