@@ -31,48 +31,24 @@ export const GET = ({request}) =>{
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>`;
 
-resp1.results.map(movie =>{
+// resp1.results.map(movie =>{
     rssFeed += `
     
         <item>
-            <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+            <title>${resp1.results[0].movie.title} full movie review</title>
+            <link>${rootDomain+"/movie/"+seoURL(resp1.results[0].movie.title)+"_"+resp1.results[0].movie.id+"/"}</link>
             <description>${movie.overview}</description>
             <pubDate>${"rssUpdateTime"}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+            <guid>${rootDomain+"/movie/"+seoURL(resp1.results[0].movie.title)+"_"+resp1.results[0].movie.id+"/"}</guid>
         </item>`;
-});
+// });
 
-resp2.results.map(movie =>{
-    rssFeed += `
-    
-        <item>
-            <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
-            <pubDate>${rssUpdateTime}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
-        </item>`;
-});
-
-resp3.results.map(movie =>{
-    rssFeed += `
-    
-        <item>
-            <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
-            <pubDate>${rssUpdateTime}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
-        </item>`;
-});
 
     rssFeed += `
 
     </channel>
 </rss>`
 
-// console.log(resp1)
     return new Response(rssFeed, {
         headers: {
           'Content-Type': 'application/rss+xml',
