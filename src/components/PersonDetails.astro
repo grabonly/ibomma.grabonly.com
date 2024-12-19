@@ -1,0 +1,25 @@
+---
+let {name, profile, dob, pob, profession} = Astro.props;
+if(profile === "/images/w185null"){
+    profile="/person.webp";
+}
+---
+
+<section class="bg-white p-2 m-auto d-flex border align-items-center mb-2">
+    <img class="person rounded-circle border me-2" src={profile} alt={name}+"profile photo"/>
+    <div>
+        <h2 class="fs-4">{name}</h2>
+        <ul class="list-unstyled mx-2"> 
+            <li>Date of Birth: {dob || "N/A"}</li>
+            <li>Place of Birth: {pob || "N/A"}</li>
+            <li>Profession: {profession || "N/A"}</li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    .person{
+        width: 9rem !important;
+        height: 9rem !important;
+    }
+</style>

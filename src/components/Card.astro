@@ -1,0 +1,19 @@
+---
+// interface Props {
+//     url: string;
+//     title: any;
+// }
+import {seoURL} from '../API/seoURL.js'
+
+let {url,title,path, id, year} = Astro.props;
+if(url === "/images/w92null"){
+    url="/placeholder.webp";
+}
+
+path = "/movie/"+seoURL(title)+"_"+id+"/";
+---
+
+<a href={path} class="card link-dark text-decoration-none">
+    <img src={url} alt={title} title={title+" "+year} class="object-fit-cover" height="200px"/>
+    <div class="px-2 py-1 text-truncate">{title} ({year})</div>
+</a>

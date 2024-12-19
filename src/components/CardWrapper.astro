@@ -1,0 +1,14 @@
+---
+import Card from "./Card.astro";
+const {resp} = Astro.props;
+const imgURL = "/images/w92";
+---
+
+<div class="row row-cols-2 row-cols-md-4 row-cols-sm-3 row-cols-xl-5 g-2">
+    {
+        resp.map((movie)=>{
+            // returns: /api/images/aosm8NMQ3UyoBVpSxyimorCQykC.jpg
+            return(<div class="col"><Card url={imgURL+movie.poster_path} title={movie.title} id={movie.id} year={new Date(movie.release_date).getFullYear()}/></div>);
+        })
+    }
+</div>

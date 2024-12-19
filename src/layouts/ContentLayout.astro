@@ -1,0 +1,18 @@
+---
+import Sidebar from "../components/Sidebar.astro"
+---
+
+<div class="mx-1 overflow-hidden">
+    <div class="row my-2">
+        <div class="col-lg-8 mb-2">
+            {/*<slot/> CardWrapper*/}
+            <slot>
+                <p>Not Found</p>
+            </slot>
+            <div class="text-center text-primary fw-semibold my-2">
+                {/* Pagination code */}
+            </div>
+        </div>
+        <div class="col-lg-4"><Sidebar/></div>
+    </div>
+</div>

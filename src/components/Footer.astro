@@ -1,0 +1,26 @@
+---
+const year = new Date().getFullYear();
+const {title} = Astro.props;
+---
+
+<footer class="text-white">
+    <div class="my-3 bg-dark p-2">
+        <span>
+            <strong>Disclaimer:</strong>As per the Copyright Act, Doing Piracy of Copyrighted Material is Illegal and Punishable. We don't recommend anyone to use such Piracy Websites. We have not provided any copyrighted material here. Through this page, we intend users regarding piracy websites and recommended them to avoid such kind of Piracy websites at all. We always prefer and recommend the users to watch Movies, TV Shows, Web Series in Official Platforms like Netflix, Hotstar, Zee5, Amazon Prime Video, Aha and more.
+        </span>
+        
+    </div>
+
+    <div class="my-3 text-center bg-dark py-2">
+        <div class="w-75 m-auto">
+            <ul class="list-unstyled d-flex flex-wrap justify-content-evenly align-items-center">
+                <li><a href="https://eliteanswers.in/contact/" class="text-decoration-none link-light">Contact</a></li>
+                <li><a href="https://eliteanswers.in/privacy-policy/" class="text-decoration-none link-light">Privacy Policy</a></li>
+                <li><a href="https://eliteanswers.in/disclaimer/" class="text-decoration-none link-light">Disclaimer</a></li>
+                <li><a href="https://eliteanswers.in/terms-conditions/" class="text-decoration-none link-light">Terms & Conditions</a></li>
+                <li><a href="https://eliteanswers.in/dmca/" class="text-decoration-none link-light">DMCA</a></li>
+            </ul>
+        </div>
+        <span>Copyright © {year} {title}</span>
+    </div>
+</footer>

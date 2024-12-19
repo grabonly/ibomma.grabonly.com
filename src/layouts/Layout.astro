@@ -1,0 +1,24 @@
+---
+const {title, desc, index} = Astro.props;
+{/* import 'bootstrap/dist/css/bootstrap.min.css';*/}
+const canonical = Astro.request.url;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={desc || " "}>
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={(index?"index,follow":"noindex") || " "}>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body class="bg-dark-subtle col-md-10 m-auto">
+    {/*<slot/>*/}
+    <slot>
+        <p>Not Found</p>
+    </slot>
+</body>
+</html>

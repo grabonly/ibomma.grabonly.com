@@ -1,0 +1,16 @@
+---
+import {loadMovies} from '../API/latestMovies.js';
+const [resp1, resp2, resp3] = await loadMovies(2)
+import { seoURL } from '../API/seoURL';
+---
+
+<aside>
+    <div class="bg-success rounded-top px-3 py-2 text-white fw-semibold fs-5">Popular Movies</div>
+    <ul class="list-group rounded-0">
+      {
+        resp1.results.map((movie)=>{
+          return <li class="list-group-item fs-6"><a href={"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"} class="text-decoration-none">{movie.title}</a></li>
+        })
+      }
+      </ul>
+</aside>

@@ -1,0 +1,19 @@
+---
+import { seoURL } from "./seoURL";
+
+const { genres } = Astro.props;
+---
+
+{
+    genres.map((genre, index) => (
+        <>
+            <a
+                class="text-decoration-none"
+                href={"/genre/" + seoURL(genre.name)+"/"}
+            >
+                {genre.name || "N/A"}
+            </a>
+            {index < genres.length - 1 && ", "}
+        </>
+    ))
+}

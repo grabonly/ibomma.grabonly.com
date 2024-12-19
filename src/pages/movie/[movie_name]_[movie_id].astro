@@ -1,0 +1,20 @@
+---
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+import MovieLayout from "../../layouts/MovieLayout.astro";
+import { movieDetails } from "../../API/movieDetails";
+
+import {title, desc} from "../../API/defaultSiteValues";
+const {movie_id} = Astro.params;
+const movie = await movieDetails(movie_id);
+---
+
+<Layout title={movie.title+" full movie - "+title} desc={movie.overview} index={true}>
+    <Header title={title}/>
+    <ContentLayout>
+        <MovieLayout movie={movie} movie_id={movie_id}/>
+    </ContentLayout>
+    <Footer title={title}/>
+</Layout>

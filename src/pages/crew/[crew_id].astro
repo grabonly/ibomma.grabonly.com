@@ -1,0 +1,27 @@
+---
+import { personDetails } from "../../API/personDetails";
+import { personMovies } from "../../API/personMovies";
+import CardWrapper from "../../components/CardWrapper.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import PersonDetails from "../../components/PersonDetails.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+import {title} from '../../API/defaultSiteValues';
+
+const {crew_id} = Astro.params;
+const person = await personDetails(crew_id);
+let profile = "/images/w185"+person.profile_path;
+
+const resp = await personMovies(crew_id);
+const desc = `${person.name} was born on ${person.birthday}, his profession department known for ${person.known_for_department}.`;
+---
+
+<Layout title={person.name+" latest movies"} desc={desc} index={false}>
+    <Header title={title}/>
+    <ContentLayout>
+        <PersonDetails name={person.name} profile={profile} dob={person.birthday} pob={person.place_of_birth} profession={person.known_for_department}/>
+        <CardWrapper resp={resp.crew}/>
+    </ContentLayout>
+    <Footer title={title}/>
+</Layout>

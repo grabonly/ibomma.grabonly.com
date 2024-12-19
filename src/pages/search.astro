@@ -1,0 +1,22 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import CardWrapper from "../components/CardWrapper.astro";
+
+import {title} from '../API/defaultSiteValues';
+import {searchMovie} from '../API/searchMovie';
+const url = new URL(Astro.request.url);
+const movie = url.searchParams.get('movie');
+let resp = await searchMovie(movie);
+resp.results = resp.results.filter((res:any) => new Date(res.release_date).getTime() < new Date().getTime());
+---
+
+<Layout title={"Search results for \""+movie+"\""} index={false}>
+    <Header title={title}/>
+    <ContentLayout>
+        {(resp.results.length > 0) ? <CardWrapper resp={resp.results}/> : "Not Found"}
+    </ContentLayout>
+    <Footer title={title}/>
+</Layout>

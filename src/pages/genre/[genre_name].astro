@@ -1,0 +1,26 @@
+---
+import CardWrapper from "../../components/CardWrapper.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import { genreMovies } from "../../API/genreMovies";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import {title} from "../../API/defaultSiteValues.js"
+
+const { genre_name } = Astro.params; 
+import {getGenreID} from '../../API/getGenreID.js'
+import { YYYY } from "../../API/time";
+const genreID = getGenreID(genre_name)
+const resp = await genreMovies(genreID);
+const year = YYYY();
+//site description below
+const desc = `Get the latest ${genre_name} movies in ${year} from ${title} at High Quality 720P, 1080P.`
+---
+
+<Layout title={genre_name+" movies "+year+" - "+title} desc={desc} index={true}>
+    <Header title={title} />
+    <ContentLayout>
+        <CardWrapper resp={resp.results} />
+    </ContentLayout>
+    <Footer title={title} />
+</Layout>

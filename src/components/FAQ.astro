@@ -1,0 +1,49 @@
+---
+// import {q1, q2, q3, q4, a5} from './PostContent.astro'
+export type QA = {
+  question: string;
+  answer: string;
+};
+
+interface Props {
+  qas: Array<QA>;
+}
+
+const { qas } = Astro.props;
+---
+
+{/*<div class="accordion" id="accordionPanelsStayOpenExample">
+  {
+    qas.map((qa) => (
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            {qa.question}
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            {qa.answer}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+*/}
+
+{qas.map(qa => (
+  <h3 class="fs-6">{qa.question}</h3>
+  <p>{qa.answer}</p>
+)
+)}

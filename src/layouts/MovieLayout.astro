@@ -1,0 +1,11 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PostContent from '../components/PostContent.astro';
+const {movie, movie_id} = Astro.props;
+---
+
+<main class="bg-white px-2 py-2 text-break">
+    <Breadcrumbs movie={movie}/>
+    <PostContent movie={movie} movie_id={movie_id} />
+    {/* <AuthorProfile/> */}
+</main>
