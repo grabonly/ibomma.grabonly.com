@@ -87,14 +87,14 @@ export const ThirtyDayAgoYYYYMMDD = () => {
 }
 
 // RSS feed Timings (published time)
-export const rssFeedTime = (flag) => {
+export const rssFeedTime = () => {
     const now = new Date();
-    // now.setHours(now.getHours() - 1);
-    if(flag){
-        // now.setMilliseconds(now.getMilliseconds() - Math.floor(Math.random()*10000));
-    } else {
-        now.setMinutes(now.getMinutes() - Math.round(Math.random()*60));
-    }
+    now.setHours(now.getHours() - 1);
+    // if(flag){
+    //     // now.setMilliseconds(now.getMilliseconds() - Math.floor(Math.random()*10000));
+    // } else {
+    //     now.setMinutes(now.getMinutes() - Math.round(Math.random()*60));
+    // }
   
     // Format the date using the specified format
     const options = {
