@@ -35,11 +35,11 @@ export const GET = ({request}) =>{
     rssFeed += `
     
         <item>
-            <title>${resp1.results[0].movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(resp1.results[0].movie.title)+"_"+resp1.results[0].movie.id+"/"}</link>
+            <title>${"resp1.results[0].movie.title"} full movie review</title>
+            <link>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title")+"_"+"resp1.results[0].movie.id"+"/"}</link>
             <description>${movie.overview}</description>
             <pubDate>${"rssUpdateTime"}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(resp1.results[0].movie.title)+"_"+resp1.results[0].movie.id+"/"}</guid>
+            <guid>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title)"+"_"+"resp1.results[0].movie.id"+"/"}</guid>
         </item>`;
 // });
 
