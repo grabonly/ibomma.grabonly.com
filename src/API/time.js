@@ -90,25 +90,14 @@ export const ThirtyDayAgoYYYYMMDD = () => {
 export const rssFeedTime = (flag) => {
     const now = new Date();
     now.setHours(now.getHours() - 1);
+
     if(flag){
         // now.setMilliseconds(now.getMilliseconds() - Math.floor(Math.random()*10000));
     } else {
         now.setMinutes(now.getMinutes() - Math.round(Math.random()*60));
     }
   
-    // Format the date using the specified format
-    const options = {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      timeZoneName: 'short'
-    };
-  
-    const formattedDate = now.toLocaleString('en-US', options);
+    const formattedDate = now.toUTCString();
   
     return formattedDate;
   }

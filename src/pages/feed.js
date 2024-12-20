@@ -1,7 +1,9 @@
 import {title} from "../API/defaultSiteValues";
+import { encodeRSSDescription } from "../API/helpers";
 import { loadMovies } from "../API/latestMovies";
 import { seoURL } from "../API/seoURL";
 import { YYYY, rssFeedTime } from "../API/time";
+
 
 export const GET = async ({request}) =>{
     const year = YYYY();
@@ -36,7 +38,7 @@ resp1.results.map(movie =>{
         <item>
             <title>${movie.title} full movie review</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
+            <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>
             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
         </item>`;
@@ -48,7 +50,7 @@ resp2.results.map(movie =>{
         <item>
             <title>${movie.title} full movie review</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
+            <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>
             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
         </item>`;
@@ -60,7 +62,7 @@ resp3.results.map(movie =>{
         <item>
             <title>${movie.title} full movie review</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
-            <description>${movie.overview}</description>
+            <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>
             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
         </item>`;

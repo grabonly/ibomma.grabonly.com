@@ -52,3 +52,12 @@ export const formatDate = (dateString) => {
 export const findLang = langCode => langs.find(lang => lang.iso_639_1 == langCode)?.english_name || "N/A";
 export const findCountry = countryCode => countries.find(country => country.iso_3166_1 == countryCode)?.english_name || "N/A";
 
+//rssDescEncoder
+export const encodeRSSDescription = (description) => {
+    return description
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
