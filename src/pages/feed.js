@@ -5,10 +5,10 @@ import { seoURL } from "../API/seoURL";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
 // const year = YYYY();
-const [resp1, resp2, resp3] = await loadMovies(1);
-const movie = resp1.results[0];
 
-export const GET = ({request}) =>{
+export const GET = async ({request}) =>{
+    const [resp1, resp2, resp3] = await loadMovies(1);
+    const movie = resp1.results[0];
     const url = new URL(request.url);
     const rootDomain = url.origin;
     let rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
