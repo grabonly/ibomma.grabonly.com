@@ -1,6 +1,6 @@
 import {title} from "../API/defaultSiteValues";
 import { loadMovies } from "../API/latestMovies";
-import { seoURL } from "../API/seoURL";
+// import { seoURL } from "../API/seoURL";
 // import { YYYY, rssFeedTime } from "../API/time";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
@@ -36,10 +36,10 @@ resp1.results.map(movie =>{
     
         <item>
             <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+            <link>${rootDomain+"/movie/"+"seoURL(movie.title)"+"_"+movie.id+"/"}</link>
             <description>${movie.overview}</description>
             <pubDate>${"rssUpdateTime"}</pubDate>
-            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+            <guid>${rootDomain+"/movie/"+"seoURL(movie.title)"+"_"+movie.id+"/"}</guid>
         </item>`;
 });
 
