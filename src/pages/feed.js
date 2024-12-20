@@ -25,7 +25,7 @@ export const GET = ({request}) =>{
         <title>${title}</title>
         <atom:link href="${rootDomain+"/feed/"}" rel="self" type="application/rss+xml" />
         <link>${rootDomain}</link>
-        <description>${title} ac  - New Telugu, Tamil, Hindi &amp; English Movies HD Quality</description>
+        <description>${title} ac  - ${"year"} New Telugu, Tamil, Hindi &amp; English Movies HD Quality</description>
         <lastBuildDate></lastBuildDate>
         <language>en-US</language>
         <sy:updatePeriod>hourly</sy:updatePeriod>
