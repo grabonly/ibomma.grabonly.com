@@ -1,11 +1,11 @@
 import {title} from "../API/defaultSiteValues";
-// import { loadMovies } from "../API/latestMovies";
-// import { seoURL } from "../API/seoURL";
+import { loadMovies } from "../API/latestMovies";
+import { seoURL } from "../API/seoURL";
 // import { YYYY, rssFeedTime } from "../API/time";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
 // const year = YYYY();
-// const [resp1, resp2, resp3] = await loadMovies(1);
+const [resp1, resp2, resp3] = await loadMovies(1);
 
 
 export const GET = ({request}) =>{
@@ -26,22 +26,22 @@ export const GET = ({request}) =>{
         <atom:link href="${rootDomain+"/feed/"}" rel="self" type="application/rss+xml" />
         <link>${rootDomain}</link>
         <description>${title} ac  - ${"year"} New Telugu, Tamil, Hindi &amp; English Movies HD Quality</description>
-        <lastBuildDate></lastBuildDate>
+        <lastBuildDate>${"feedTime"}</lastBuildDate>
         <language>en-US</language>
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>`;
 
-// resp1.results.map(movie =>{
-    // rssFeed += `
+resp1.results.map(movie =>{
+    rssFeed += `
     
-    //     <item>
-    //         <title>${"resp1.results[0].movie.title"} full movie review</title>
-    //         <link>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title")+"_"+"resp1.results[0].movie.id"+"/"}</link>
-    //         <description>${movie.overview}</description>
-    //         <pubDate>${"rssUpdateTime"}</pubDate>
-    //         <guid>${rootDomain+"/movie/"+seoURL("resp1.results[0].movie.title)"+"_"+"resp1.results[0].movie.id"+"/"}</guid>
-    //     </item>`;
-// });
+        <item>
+            <title>${movie.title} full movie review</title>
+            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+            <description>${movie.overview}</description>
+            <pubDate>${"rssUpdateTime"}</pubDate>
+            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+        </item>`;
+});
 
 
     rssFeed += `
