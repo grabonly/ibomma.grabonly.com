@@ -1,12 +1,12 @@
 import {title} from "../API/defaultSiteValues";
 import { loadMovies } from "../API/latestMovies";
-// import { seoURL } from "../API/seoURL";
+import { seoURL } from "../API/seoURL";
 // import { YYYY, rssFeedTime } from "../API/time";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
 // const year = YYYY();
 const [resp1, resp2, resp3] = await loadMovies(1);
-
+const movie = resp1.results[0];
 
 export const GET = ({request}) =>{
     const url = new URL(request.url);
@@ -31,17 +31,17 @@ export const GET = ({request}) =>{
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>`;
 
-resp1.results.map(movie =>{
+// resp1.results.map(movie =>{
     rssFeed += `
     
         <item>
             <title>${movie.title} full movie review</title>
-            <link>${rootDomain+"/movie/"+"seoURL(movie.title)"+"_"+movie.id+"/"}</link>
+            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
             <description>${movie.overview}</description>
             <pubDate>${"rssUpdateTime"}</pubDate>
-            <guid>${rootDomain+"/movie/"+"seoURL(movie.title)"+"_"+movie.id+"/"}</guid>
+            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
         </item>`;
-});
+// });
 
 
     rssFeed += `
