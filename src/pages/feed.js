@@ -1,11 +1,11 @@
 import {title} from "../API/defaultSiteValues";
-import { loadMovies } from "../API/latestMovies";
-import { seoURL } from "../API/seoURL";
+// import { loadMovies } from "../API/latestMovies";
+// import { seoURL } from "../API/seoURL";
 // import { YYYY, rssFeedTime } from "../API/time";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
-const year = YYYY();
-const [resp1, resp2, resp3] = await loadMovies(1);
+// const year = YYYY();
+// const [resp1, resp2, resp3] = await loadMovies(1);
 
 
 export const GET = ({request}) =>{
