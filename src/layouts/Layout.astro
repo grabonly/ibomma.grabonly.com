@@ -5,7 +5,6 @@ const canonical = Astro.request.url;
 
 Astro.response.headers.set('Cache-Control', 'public, maxage=3600, stale-while-revalidate=30');
 
-import Analytics from "../own/analytics.astro";
 ---
 
 <!DOCTYPE html>
@@ -24,6 +23,9 @@ import Analytics from "../own/analytics.astro";
     <slot>
         <p>Not Found</p>
     </slot>
+
+    <script>
+        import "../own/analytics"
+    </script>
 </body>
 </html>
-<Analytics/>
