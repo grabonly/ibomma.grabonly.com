@@ -1,7 +1,7 @@
 import {title} from "../API/defaultSiteValues";
 import { loadMovies } from "../API/latestMovies";
 import { seoURL } from "../API/seoURL";
-import { YYYY, rssFeedTime } from "../API/time";
+// import { YYYY, rssFeedTime } from "../API/time";
 // const rssUpdateTime = rssFeedTime()
 // const rssPubTime = rssFeedTime(false);
 const year = YYYY();

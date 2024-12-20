@@ -1,9 +1,10 @@
 ---
+import Analytics from "../own/analytics.astro";
 const {title, desc, index} = Astro.props;
 {/* import 'bootstrap/dist/css/bootstrap.min.css';*/}
 const canonical = Astro.request.url;
 
-Astro.response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=30');
+Astro.response.headers.set('Cache-Control', 'public, maxage=3600, stale-while-revalidate=30');
 ---
 
 <!DOCTYPE html>
@@ -23,4 +24,5 @@ Astro.response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-
         <p>Not Found</p>
     </slot>
 </body>
+<Analytics/>
 </html>
