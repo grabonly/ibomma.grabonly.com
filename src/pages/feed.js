@@ -8,9 +8,10 @@ import { seoURL } from "../API/seoURL";
 
 export const GET = async ({request}) =>{
     const [resp1, resp2, resp3] = await loadMovies(1);
-    const movie = resp1.results[0];
+
     const url = new URL(request.url);
     const rootDomain = url.origin;
+
     let rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0"
         xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -31,7 +32,7 @@ export const GET = async ({request}) =>{
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>`;
 
-// resp1.results.map(movie =>{
+resp1.results.map(movie =>{
     rssFeed += `
     
         <item>
@@ -41,7 +42,31 @@ export const GET = async ({request}) =>{
             <pubDate>${"rssUpdateTime"}</pubDate>
             <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
         </item>`;
-// });
+});
+
+resp2.results.map(movie =>{
+    rssFeed += `
+    
+        <item>
+            <title>${movie.title} full movie review</title>
+            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+            <description>${movie.overview}</description>
+            <pubDate>${"rssUpdateTime"}</pubDate>
+            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+        </item>`;
+});
+
+resp3.results.map(movie =>{
+    rssFeed += `
+    
+        <item>
+            <title>${movie.title} full movie review</title>
+            <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
+            <description>${movie.overview}</description>
+            <pubDate>${"rssUpdateTime"}</pubDate>
+            <guid>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</guid>
+        </item>`;
+});
 
 
     rssFeed += `
