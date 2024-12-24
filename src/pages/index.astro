@@ -5,11 +5,15 @@ import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import {title, desc} from "../API/defaultSiteValues.js"
 import { YYYY, metaUpdatedTime } from "../API/time";
+import Ad1 from "../own/Ad1.astro";
+import Ad2 from "../own/Ad2.astro";
 const year = YYYY();
 ---
 
 <Layout title={title+" ac "+year+" - New Telugu, Tamil, Hindi & English Movies HD Quality"} desc={desc} index={true}>
+    <Ad1/> <!--Ad Code 1 -->
     <Header title={title} />
+    <Ad2/> <!--AD Code 2 -->
     <Content/>
     <Footer title={title} />
 </Layout>

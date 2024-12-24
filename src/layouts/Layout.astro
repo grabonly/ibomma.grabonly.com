@@ -1,31 +1,41 @@
 ---
-const {title, desc, index} = Astro.props;
-{/* import 'bootstrap/dist/css/bootstrap.min.css';*/}
+const { title, desc, index } = Astro.props;
+{
+    /* import 'bootstrap/dist/css/bootstrap.min.css';*/
+}
 const canonical = Astro.request.url;
 
 // Astro.response.headers.set('Cache-Control', 'public, maxage=3600, stale-while-revalidate=30');
-
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content={desc || " "}>
-    <link rel="canonical" href={canonical} />
-    <meta name="robots" content={(index?"index,follow":"noindex") || " "}>
-    <link rel="stylesheet" href="/style.css"/>
-</head>
-<body class="bg-dark-subtle col-md-10 m-auto">
-    {/*<slot/>*/}
-    <slot>
-        <p>Not Found</p>
-    </slot>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={desc || " "} />
+        <link rel="canonical" href={canonical} />
+        <meta
+            name="robots"
+            content={(index ? "index,follow" : "noindex") || " "}
+        />
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/style2.css" />
+    </head>
+    <body class="bg-dark-subtle col-md-10 m-auto">
+        <slot>
+            <p>Not Found</p>
+        </slot>
 
-    <script>
-        import "../own/analytics"
-    </script>
-</body>
+        <script>
+            import "../own/analytics";
+
+            setTimeout(() => {
+                var script = document.createElement("script");
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2508592928833513";
+                document.body.appendChild(script);
+            }, 3600);
+        </script>
+    </body>
 </html>
