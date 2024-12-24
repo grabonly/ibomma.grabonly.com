@@ -1,8 +1,5 @@
 ---
 const { title, desc, index } = Astro.props;
-{
-    /* import 'bootstrap/dist/css/bootstrap.min.css';*/
-}
 const canonical = Astro.request.url;
 
 // Astro.response.headers.set('Cache-Control', 'public, maxage=3600, stale-while-revalidate=30');
@@ -30,12 +27,6 @@ const canonical = Astro.request.url;
 
         <script>
             import "../own/analytics";
-
-            setTimeout(() => {
-                var script = document.createElement("script");
-                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2508592928833513";
-                document.body.appendChild(script);
-            }, 4000);
         </script>
     </body>
 </html>
