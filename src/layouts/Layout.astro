@@ -21,6 +21,14 @@ const canonical = Astro.request.url;
         <slot>
             <p>Not Found</p>
         </slot>
-        <script is:inline src="/analytics.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWMJX3XWT0"></script>
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JWMJX3XWT0');
+        </script>
     </body>
 </html>
