@@ -101,3 +101,12 @@ export const rssFeedTime = (flag) => {
   
     return formattedDate;
   }
+
+  // TIME Example: "2024-12-25T09:30:00.000Z"
+  export function sitemapTime() {
+    const currentDate = new Date();
+
+    currentDate.setHours(currentDate.getHours() - 1);
+
+    return currentDate.toISOString();
+}

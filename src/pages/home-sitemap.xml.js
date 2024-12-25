@@ -1,8 +1,10 @@
 import { loadMovies } from "../API/latestMovies";
 import { seoURL } from "../API/seoURL";
-import { rssFeedTime } from "../API/time";
+import { sitemapTime } from "../API/time";
+
 
 export const GET = async ({request}) => {
+    const time = sitemapTime();
     const [resp1, resp2, resp3] = await loadMovies(1);
 
     const url = new URL(request.url);
@@ -16,7 +18,7 @@ export const GET = async ({request}) => {
 
         <url>
             <loc>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</loc>
-            <lastmod>${rssFeedTime(false)}</lastmod>
+            <lastmod>${time}</lastmod>
         </url>`;
     })
 
@@ -25,7 +27,7 @@ export const GET = async ({request}) => {
         
         <url>
             <loc>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</loc>
-            <lastmod>${rssFeedTime(false)}</lastmod>
+            <lastmod>${time}</lastmod>
         </url>`;
     })
 
@@ -34,7 +36,7 @@ export const GET = async ({request}) => {
         
         <url>
             <loc>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</loc>
-            <lastmod>${rssFeedTime(false)}</lastmod>
+            <lastmod>${time}</lastmod>
         </url>`;
     })
 
