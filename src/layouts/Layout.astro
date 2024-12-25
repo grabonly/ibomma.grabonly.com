@@ -22,13 +22,14 @@ const canonical = Astro.request.url;
             <p>Not Found</p>
         </slot>
 
+        <!--  Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWMJX3XWT0"></script>
         <script>
-            import "../own/analytics";
-            // setTimeout(()=>{
-            //     const script = document.createElement("script");
-            //     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2508592928833513";
-            //     document.body.appendChild(script);
-            // },3900)
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'G-JWMJX3XWT0');
         </script>
     </body>
 </html>
