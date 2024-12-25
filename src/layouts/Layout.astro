@@ -21,6 +21,6 @@ const canonical = Astro.request.url;
         <slot>
             <p>Not Found</p>
         </slot>
-        <script async src="/analytics.js"></script>
+        <script is:inline src="/analytics.js"></script>
     </body>
 </html>
