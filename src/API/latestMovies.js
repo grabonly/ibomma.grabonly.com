@@ -1,7 +1,7 @@
 import { options } from './apiOptions'
 import { ThirtyDayAgoYYYYMMDD, TodayYYYYMMDD } from './time';
 
-//movies in /home page
+//movies in /home page 
 export const loadMovies = async (num) => {
   const urls = [
     `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${num}&primary_release_date.gte=${ThirtyDayAgoYYYYMMDD()}&primary_release_date.lte=${TodayYYYYMMDD()}&sort_by=popularity.desc&with_origin_country=IN`,
