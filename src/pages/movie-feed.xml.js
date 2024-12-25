@@ -36,7 +36,7 @@ resp1.results.map(movie =>{
     rssFeed += `
     
         <item>
-            <title>${movie.title} full movie review</title>
+            <title>${movie.title} Movie Latest Review, News & Updates</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
             <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>
@@ -48,7 +48,7 @@ resp2.results.map(movie =>{
     rssFeed += `
     
         <item>
-            <title>${movie.title} full movie review</title>
+            <title>${movie.title} Movie Latest Review, News & Updates</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
             <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>
@@ -60,7 +60,7 @@ resp3.results.map(movie =>{
     rssFeed += `
     
         <item>
-            <title>${movie.title} full movie review</title>
+            <title>${movie.title} Movie Latest Review, News & Updates</title>
             <link>${rootDomain+"/movie/"+seoURL(movie.title)+"_"+movie.id+"/"}</link>
             <description>${encodeRSSDescription(movie.overview)}</description>
             <pubDate>${rssFeedTime(false)}</pubDate>

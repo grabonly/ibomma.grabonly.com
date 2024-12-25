@@ -1,7 +1,12 @@
 //Get Full Year
 export const YYYY = () => {
     return new Date().getFullYear();
-} 
+}
+
+//Get Full Year with parameter
+export const movieYear = (year) => {
+    return new Date(year).getFullYear();
+}
 
 //published Time for bots
 export const metaPublishedTime = () => {

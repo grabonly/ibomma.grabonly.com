@@ -10,4 +10,4 @@ export const movieAssets = async (id) => {
       return resp.json();
     }));
     return res;
-  }
+}

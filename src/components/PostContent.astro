@@ -5,6 +5,7 @@ import FAQ from "./FAQ.astro";
 import Genres from '../API/helpers.astro'
 import PostUpdateTime from "./PostUpdateTime.astro";
 import { movieAssets } from "../API/movieAssets";
+import { movieYear } from "../API/time";
 
 const {movie, movie_id} = Astro.props;
 const credit = await movieCredits(movie_id);
@@ -27,7 +28,7 @@ const [images, videos] = await movieAssets(movie_id);
 ---
 
 <article>
-  <h1>{movie.title} movie latest review</h1>
+  <h1>{movie.title} ({movieYear(movie.release_date)}) Movie Review, News & Updates</h1>
   <PostUpdateTime/>
 
   <p>{movie.title} is a very exciting movie. It has {movieGenres}. The director of the movie is {directorNames}. The story is written by {writerNames}. {producerNames} are made the movie. The movie came out on {formatDate(movie.release_date)}. If you like movies with genres such as {movieGenres}, you will love this one.</p>
@@ -118,6 +119,14 @@ const [images, videos] = await movieAssets(movie_id);
               })
           }
       </div>
+
+  {videos.results.length>0?<h2>{movie.title} Trailer</h2><script src="/MovieTrailer.js"></script>: ""}
+      <div class="text-center">
+        {
+          <div class="youtube-player" data-id={videos.results[0].key}></div>
+        }
+      </div>
+
 
   <h2>Cast Details Overview</h2>
   <table class="table table-striped table-hover border">
