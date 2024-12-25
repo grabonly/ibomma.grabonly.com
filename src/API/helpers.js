@@ -59,5 +59,6 @@ export const encodeRSSDescription = (description) => {
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+        .replace(/'/g, '&#39;')
+        .replace(/Ã/g, '(A);');
 }
