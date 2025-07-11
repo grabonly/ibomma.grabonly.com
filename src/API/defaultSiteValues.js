@@ -1,3 +1,5 @@
+import { YYYY } from "./time";
+
 /* Site Settings */
-export const title = "1TamilMV";
-export const desc = `${title} ac 2024: Find the latest Telugu, Tamil, Hindi movies and English movies at HD Quality.`;
+export const title = "iBOMMA";
+export const desc = `${title} ${YYYY()}: Find the latest Telugu, Tamil, Hindi movies and English movies at HD Quality.`;

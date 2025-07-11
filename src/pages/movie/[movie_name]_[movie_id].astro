@@ -7,15 +7,15 @@ import MovieLayout from "../../layouts/MovieLayout.astro";
 import { movieDetails } from "../../API/movieDetails";
 import { movieYear } from "../../API/time";
 
-import {title} from "../../API/defaultSiteValues";
-const {movie_id} = Astro.params;
+import { title } from "../../API/defaultSiteValues";
+const { movie_id } = Astro.params;
 const movie = await movieDetails(movie_id);
 ---
 
-<Layout title={movie.title+" Movie ("+movieYear(movie.release_date)+") - Tamilrockers "+title} desc={movie.overview} index={true}>
-    <Header title={title}/>
+<Layout title={movie.title + " Movie (" + movieYear(movie.release_date) + ") - " + title} desc={movie.overview} index={true}>
+    <Header title={title} />
     <ContentLayout>
-        <MovieLayout movie={movie} movie_id={movie_id}/>
+        <MovieLayout movie={movie} movie_id={movie_id} />
     </ContentLayout>
-    <Footer title={title}/>
+    <Footer title={title} />
 </Layout>
